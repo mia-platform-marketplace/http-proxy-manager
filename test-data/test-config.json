@@ -1,0 +1,52 @@
+{
+  "proxies": [
+    {
+      "authentication": "oauth2",
+      "clientId": "6779ef20e75817b79602",
+      "clientSecret": "GBAyfVL7YWtP6gudLIjbRZV_N0dW",
+      "tokenIssuerUrl": "http://external-service.com/auth/oauth/token",
+      "targetBaseUrl": "http://external-service.com",
+      "basePath": "/external-service",
+      "grantType": "client_credentials",
+      "authType": "client_secret_basic",
+      "additionalHeaders": [
+        {
+          "name": "x-api-key",
+          "value": "custom-api-key"
+        }
+      ]
+    },
+    {
+      "authentication": "oauth2",
+      "clientId": "6739ef20e75817a79c02",
+      "clientSecret": "GBAfweVL7YWtP6gudLIjbRZV_NdW",
+      "tokenIssuerUrl": "http://mia-client-credentials.com/auth/oauth/token",
+      "targetBaseUrl": "https://mia-service.com",
+      "basePath": "/mia-service",
+      "authType": "client_secret_basic",
+      "grantType": "client_credentials",
+      "additionalAuthFields": {
+        "audience": "mia-audience"
+      }
+    },
+    {
+      "authentication": "oauth2",
+      "username": "username",
+      "password": "pwd",
+      "clientId": "0fbd65b60ca0388f2069",
+      "clientSecret": "ZUotgSDuyesC6VpZM9P2_mDJPTX4",
+      "tokenIssuerUrl": "http://external-service.com/auth/oauth/token",
+      "targetBaseUrl": "http://external-service.com",
+      "basePath": "/external-service",
+      "grantType": "password"
+    },
+    {
+      "targetBaseUrl": "http://other-service.com",
+      "basePath": "/other-service"
+    },
+    {
+      "targetBaseUrl": "https://docs.mia-platform.eu/docs/release-notes/{version}",
+      "basePath": "/mia/{version}"
+    }
+  ]
+}

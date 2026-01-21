@@ -1,0 +1,79 @@
+{
+    "type": "object",
+    "properties": {
+        "proxies": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["targetBaseUrl","basePath"],
+                "properties": {
+                    "authentication": {
+                        "type": "string",
+                        "enum": ["none","oauth2"],
+                        "default": "none"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "clientId": {
+                        "type": "string"
+                    },
+                    "clientSecret": {
+                        "type": "string"
+                    },
+                    "tokenIssuerUrl": {
+                        "type": "string"
+                    },
+                    "tokenIssuerValidationPath": {
+                        "type": "string"
+                    },
+                    "targetBaseUrl": {
+                        "type": "string",
+                        "pattern": "^https?:\\/\\/[a-zA-Z0-9.:_-]+(\\/((\\{[a-zA-Z0-9_-]+\\})|[a-zA-Z0-9_-]+))*\\/?$"
+                    },
+                    "basePath": {
+                        "type": "string",
+                        "pattern": "^(\\/((\\{[a-zA-Z0-9_-]+\\})|[a-zA-Z0-9_-]+))+\\/?$"
+                    },
+                    "grantType": {
+                        "type": "string",
+                        "enum": ["client_credentials","password"],
+                        "default": "client_credentials"
+                    },
+                    "authType": {
+                        "type": "string",
+                        "enum": ["client_secret_basic"],
+                        "default": "client_secret_basic"
+                    },
+                    "additionalAuthFields": {
+                        "type": "object"
+                    },
+                    "headersToProxy": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalHeaders": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["name","value"]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
